@@ -23,7 +23,7 @@ export function CTA() {
             Ready to Improve Your Quality of Life?
           </h2>
           <p className="text-xl text-primary-100 mb-10 max-w-2xl mx-auto">
-            Schedule a free consultation with our medical equipment specialists today. We're here to help you find the perfect solution.
+            Schedule a free consultation with our medical equipment specialists today. We&apos;re here to help you find the perfect solution.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -196,30 +196,3 @@ export function Hero() {
     </section>
   )
 }
-
-<style jsx global>{`
-  .bg-grid-pattern {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
-  }
-
-  @keyframes blob {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(20px, -50px) scale(1.1); }
-    50% { transform: translate(-20px, 20px) scale(0.9); }
-    75% { transform: translate(50px, 50px) scale(1.05); }
-  }
-
-  .animate-blob {
-    animation: blob 7s infinite;
-  }
-
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
-`}</style>

@@ -32,7 +32,7 @@ const features = [
   {
     icon: Clock,
     title: 'Quick Response',
-    description: 'Average response time under 2 hours. Your health needs can't wait, and neither do we.',
+    description: "Average response time under 2 hours. Your health needs can't wait, and neither do we.",
   },
 ]
 

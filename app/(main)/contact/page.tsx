@@ -46,7 +46,7 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="text-xl text-gray-600">
-              Have questions about our products or services? We're here to help!
+              Have questions about our products or services? We&apos;re here to help!
             </p>
           </motion.div>
         </div>
@@ -65,7 +65,7 @@ export default function ContactPage() {
               <h2 className="font-display text-3xl font-bold text-gray-900 mb-6">
                 Send Us a Message
               </h2>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={(e) => { e.preventDefault() }}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">

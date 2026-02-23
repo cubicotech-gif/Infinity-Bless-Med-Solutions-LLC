@@ -1,5 +1,8 @@
 -- Create tables for Infinity Bless Medical website
 
+-- Enable UUID extension
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 -- Hero Content table
 CREATE TABLE IF NOT EXISTS hero_content (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
