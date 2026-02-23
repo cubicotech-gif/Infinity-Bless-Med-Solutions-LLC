@@ -18,14 +18,14 @@ export function Hero() {
   const heroImage = useSiteImage('hero_main_image', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80')
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-50 via-primary-50/30 to-secondary-50/20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-blue-50/60 via-primary-50/30 to-white">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      
+
       {/* Decorative elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute top-40 left-10 w-72 h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-accent-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute top-40 left-10 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-4000"></div>
 
       <div className="relative max-w-7xl mx-auto px-6 py-32 lg:py-40">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -41,9 +41,9 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
             >
-              <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
+              <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
               Trusted Medical Equipment Supplier
             </motion.div>
 
@@ -55,7 +55,7 @@ export function Hero() {
               className="font-display text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight"
             >
               Quality Medical Equipment for
-              <span className="text-primary"> Better Living</span>
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent"> Better Living</span>
             </motion.h1>
 
             {/* Subheading */}
@@ -75,10 +75,10 @@ export function Hero() {
               transition={{ delay: 0.5 }}
               className="flex flex-wrap gap-4"
             >
-              {features.map((feature, index) => (
+              {features.map((feature) => (
                 <div
                   key={feature}
-                  className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm"
+                  className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-blue-100/50"
                 >
                   <Check className="h-5 w-5 text-primary flex-shrink-0" />
                   <span className="text-sm font-medium text-gray-700">{feature}</span>
@@ -93,13 +93,13 @@ export function Hero() {
               transition={{ delay: 0.6 }}
               className="flex flex-wrap gap-4"
             >
-              <Button asChild size="lg" className="group">
+              <Button asChild size="lg" className="group bg-blue-600 hover:bg-blue-700 shadow-lg">
                 <Link href="/contact">
                   Schedule Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
                 <Link href="/products">
                   Browse Products
                 </Link>
@@ -114,15 +114,15 @@ export function Hero() {
               className="flex flex-wrap gap-8 pt-8 border-t border-gray-200"
             >
               <div>
-                <div className="text-3xl font-bold text-gray-900">500+</div>
+                <div className="text-3xl font-bold text-blue-700">500+</div>
                 <div className="text-sm text-gray-600">Happy Customers</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-gray-900">15+</div>
+                <div className="text-3xl font-bold text-blue-700">15+</div>
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-gray-900">100%</div>
+                <div className="text-3xl font-bold text-blue-700">100%</div>
                 <div className="text-sm text-gray-600">Quality Assured</div>
               </div>
             </motion.div>
@@ -135,7 +135,7 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="relative hidden lg:block"
           >
-            <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-blue-100">
               <Image
                 src={heroImage}
                 alt="Medical professional with patient"
@@ -144,10 +144,10 @@ export function Hero() {
                 priority
               />
               {/* Overlay card */}
-              <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+              <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-blue-50">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Check className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Check className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Certified Quality</div>
@@ -162,10 +162,10 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="absolute -top-6 -right-6 bg-white rounded-xl p-6 shadow-xl"
+              className="absolute -top-6 -right-6 bg-white rounded-xl p-6 shadow-xl border border-blue-50"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
                   <span className="text-2xl">🏥</span>
                 </div>
                 <div>
@@ -187,11 +187,11 @@ export function Hero() {
       >
         <div className="flex flex-col items-center gap-2">
           <span className="text-sm text-gray-500">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex items-start justify-center p-2">
+          <div className="w-6 h-10 border-2 border-blue-300 rounded-full flex items-start justify-center p-2">
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1 h-2 bg-primary rounded-full"
+              className="w-1 h-2 bg-blue-500 rounded-full"
             ></motion.div>
           </div>
         </div>

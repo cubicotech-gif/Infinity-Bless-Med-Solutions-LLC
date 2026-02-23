@@ -98,12 +98,12 @@ html {
 /* Gradient backgrounds */
 .gradient-radial {
   background: radial-gradient(circle at 20% 50%, rgba(96, 163, 58, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(139, 115, 85, 0.08) 0%, transparent 50%);
+              radial-gradient(circle at 80% 80%, rgba(30, 107, 184, 0.08) 0%, transparent 50%);
 }
 
 .gradient-mesh {
   background: linear-gradient(135deg, rgba(96, 163, 58, 0.05) 0%, transparent 50%),
-              linear-gradient(45deg, rgba(217, 119, 6, 0.03) 50%, transparent 100%);
+              linear-gradient(45deg, rgba(30, 107, 184, 0.04) 50%, transparent 100%);
 }
 
 /* Texture overlay */

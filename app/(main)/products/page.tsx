@@ -113,7 +113,7 @@ export default function ProductsPage() {
   return (
     <div className="pt-32">
       {/* Hero section */}
-      <section className="bg-gradient-to-br from-primary-50 to-white py-20">
+      <section className="bg-gradient-to-br from-blue-50/60 via-primary-50/30 to-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -127,7 +127,7 @@ export default function ProductsPage() {
             <p className="text-xl text-gray-600 mb-8">
               Comprehensive range of certified medical equipment to support your health and mobility needs
             </p>
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
               <a href="tel:9083049596">
                 <Phone className="mr-2 h-5 w-5" />
                 Call for Expert Guidance
@@ -207,12 +207,12 @@ export default function ProductsPage() {
       ))}
 
       {/* CTA section */}
-      <section className="py-20 bg-primary text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-700 to-primary-600 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-display text-4xl font-bold mb-6">
             Need Help Choosing the Right Product?
           </h2>
-          <p className="text-xl mb-8 text-primary-100">
+          <p className="text-xl mb-8 text-blue-100">
             Our experts are ready to assist you in finding the perfect medical equipment for your needs
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

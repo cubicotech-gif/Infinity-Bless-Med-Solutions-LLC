@@ -34,7 +34,7 @@ export default function AboutPage() {
   return (
     <div className="pt-32">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-50 to-white py-20">
+      <section className="bg-gradient-to-br from-blue-50/60 via-primary-50/30 to-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -119,8 +119,8 @@ export default function AboutPage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-xl p-8 shadow-lg"
               >
-                <div className="w-14 h-14 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
-                  <value.icon className="h-7 w-7 text-primary" />
+                <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                  <value.icon className="h-7 w-7 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {value.title}
@@ -135,24 +135,24 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-20 bg-primary text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-700 to-primary-600 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12 text-center">
             <div>
               <div className="text-5xl font-bold mb-2">15+</div>
-              <div className="text-primary-100">Years of Experience</div>
+              <div className="text-blue-200">Years of Experience</div>
             </div>
             <div>
               <div className="text-5xl font-bold mb-2">500+</div>
-              <div className="text-primary-100">Happy Customers</div>
+              <div className="text-blue-200">Happy Customers</div>
             </div>
             <div>
               <div className="text-5xl font-bold mb-2">1000+</div>
-              <div className="text-primary-100">Products Delivered</div>
+              <div className="text-blue-200">Products Delivered</div>
             </div>
             <div>
               <div className="text-5xl font-bold mb-2">100%</div>
-              <div className="text-primary-100">Quality Guaranteed</div>
+              <div className="text-blue-200">Quality Guaranteed</div>
             </div>
           </div>
         </div>

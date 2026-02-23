@@ -7,7 +7,7 @@ import { ArrowRight, Phone } from 'lucide-react'
 
 export function CTA() {
   return (
-    <section className="py-24 bg-gradient-to-br from-primary-600 to-primary-700 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-blue-700 via-blue-800 to-primary-700 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
       
@@ -22,7 +22,7 @@ export function CTA() {
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-white mb-6">
             Ready to Improve Your Quality of Life?
           </h2>
-          <p className="text-xl text-primary-100 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Schedule a free consultation with our medical equipment specialists today. We&apos;re here to help you find the perfect solution.
           </p>
           
@@ -31,7 +31,7 @@ export function CTA() {
               asChild 
               size="lg" 
               variant="secondary"
-              className="bg-white text-primary hover:bg-gray-50 shadow-xl"
+              className="bg-white text-blue-700 hover:bg-gray-50 shadow-xl"
             >
               <Link href="/contact">
                 Schedule Free Consultation
@@ -54,19 +54,19 @@ export function CTA() {
           <div className="mt-12 flex flex-wrap justify-center gap-12 text-white/90">
             <div>
               <div className="text-3xl font-bold">15+</div>
-              <div className="text-sm text-primary-100">Years Experience</div>
+              <div className="text-sm text-blue-200">Years Experience</div>
             </div>
             <div>
               <div className="text-3xl font-bold">500+</div>
-              <div className="text-sm text-primary-100">Satisfied Customers</div>
+              <div className="text-sm text-blue-200">Satisfied Customers</div>
             </div>
             <div>
               <div className="text-3xl font-bold">24/7</div>
-              <div className="text-sm text-primary-100">Customer Support</div>
+              <div className="text-sm text-blue-200">Customer Support</div>
             </div>
             <div>
               <div className="text-3xl font-bold">100%</div>
-              <div className="text-sm text-primary-100">Quality Guaranteed</div>
+              <div className="text-sm text-blue-200">Quality Guaranteed</div>
             </div>
           </div>
         </motion.div>
