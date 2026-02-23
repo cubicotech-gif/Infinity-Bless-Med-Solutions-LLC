@@ -133,7 +133,7 @@ INSERT INTO testimonials (name, role, content, rating) VALUES
 (
   'Robert Williams',
   'Family Caregiver',
-  'The continuous glucose monitor we purchased has been a game-changer for managing my mother's diabetes. Highly recommend!',
+  'The continuous glucose monitor we purchased has been a game-changer for managing my mother''s diabetes. Highly recommend!',
   5
 );
 
