@@ -65,7 +65,7 @@ export default function AboutPage() {
                   Infinity Bless Med Solutions was founded with a simple yet powerful mission: to make quality medical equipment accessible to everyone who needs it.
                 </p>
                 <p>
-                  We understand that medical equipment isn't just about products—it's about improving lives, restoring independence, and providing peace of mind to families across New Jersey.
+                  We understand that medical equipment isn&apos;t just about products—it&apos;s about improving lives, restoring independence, and providing peace of mind to families across New Jersey.
                 </p>
                 <p>
                   Our team of dedicated professionals brings together expertise in medical equipment, patient care, and customer service to ensure every interaction exceeds your expectations.

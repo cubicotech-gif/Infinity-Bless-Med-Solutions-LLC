@@ -1,5 +1,8 @@
 -- Create tables for Infinity Bless Medical website
 
+-- Enable UUID extension
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 -- Hero Content table
 CREATE TABLE IF NOT EXISTS hero_content (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -130,7 +133,7 @@ INSERT INTO testimonials (name, role, content, rating) VALUES
 (
   'Robert Williams',
   'Family Caregiver',
-  'The continuous glucose monitor we purchased has been a game-changer for managing my mother's diabetes. Highly recommend!',
+  'The continuous glucose monitor we purchased has been a game-changer for managing my mother''s diabetes. Highly recommend!',
   5
 );
 

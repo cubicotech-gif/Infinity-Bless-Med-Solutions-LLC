@@ -142,7 +142,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-            <p>© 2025 Infinity Bless Med Solutions LLC. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Infinity Bless Med Solutions LLC. All rights reserved.</p>
             <p>
               Developed by{' '}
               <a

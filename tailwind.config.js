@@ -67,6 +67,10 @@ module.exports = {
           950: "#441b03",
           foreground: "#ffffff",
         },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
