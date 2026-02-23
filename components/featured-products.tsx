@@ -6,14 +6,16 @@ import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
 import { Button } from './ui/button'
 import { ArrowRight } from 'lucide-react'
+import { useSiteImages } from '@/hooks/use-site-image'
 
-const products = [
+const defaultProducts = [
   {
     id: 1,
     name: 'Premium Wheelchairs',
     category: 'Mobility',
     description: 'Lightweight, durable wheelchairs designed for maximum comfort and independence.',
-    image: 'https://images.unsplash.com/photo-1583946099379-f9c9cb8bc030?w=600&q=80',
+    imageSlot: 'featured_wheelchairs',
+    defaultImage: 'https://images.unsplash.com/photo-1583946099379-f9c9cb8bc030?w=600&q=80',
     features: ['Lightweight aluminum frame', 'Adjustable footrests', 'Foldable design'],
   },
   {
@@ -21,7 +23,8 @@ const products = [
     name: 'Continuous Glucose Monitors',
     category: 'Diabetic Care',
     description: 'Real-time glucose monitoring with smartphone connectivity for better diabetes management.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80',
+    imageSlot: 'featured_cgm',
+    defaultImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80',
     features: ['Real-time monitoring', 'Smartphone app', '14-day sensor life'],
   },
   {
@@ -29,7 +32,8 @@ const products = [
     name: 'Orthopedic Braces',
     category: 'Support',
     description: 'Medical-grade braces providing stability, pain relief, and enhanced recovery.',
-    image: 'https://images.unsplash.com/photo-1620331925087-4a13be250c5d?w=600&q=80',
+    imageSlot: 'featured_braces',
+    defaultImage: 'https://images.unsplash.com/photo-1620331925087-4a13be250c5d?w=600&q=80',
     features: ['Adjustable compression', 'Breathable material', 'Non-slip design'],
   },
   {
@@ -37,12 +41,22 @@ const products = [
     name: 'Walkers & Rollators',
     category: 'Mobility',
     description: 'Sturdy walking support with ergonomic designs for seniors and recovery patients.',
-    image: 'https://images.unsplash.com/photo-1610349907345-19bf89ce8e3e?w=600&q=80',
+    imageSlot: 'featured_walkers',
+    defaultImage: 'https://images.unsplash.com/photo-1610349907345-19bf89ce8e3e?w=600&q=80',
     features: ['Hand brakes', 'Padded seat', 'Storage basket'],
   },
 ]
 
 export function FeaturedProducts() {
+  const images = useSiteImages(
+    defaultProducts.map((p) => ({ key: p.imageSlot, defaultUrl: p.defaultImage }))
+  )
+
+  const products = defaultProducts.map((p) => ({
+    ...p,
+    image: images[p.imageSlot] || p.defaultImage,
+  }))
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">

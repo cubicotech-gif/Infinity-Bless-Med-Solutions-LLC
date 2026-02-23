@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Award, Heart, Shield, Users } from 'lucide-react'
+import { useSiteImage } from '@/hooks/use-site-image'
 
 const values = [
   {
@@ -28,6 +29,8 @@ const values = [
 ]
 
 export default function AboutPage() {
+  const aboutImage = useSiteImage('about_story_image', 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=800&q=80')
+
   return (
     <div className="pt-24">
       {/* Hero */}
@@ -79,7 +82,7 @@ export default function AboutPage() {
               className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
-                src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=800&q=80"
+                src={aboutImage}
                 alt="Medical professionals"
                 fill
                 className="object-cover"

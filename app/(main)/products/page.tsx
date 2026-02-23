@@ -5,8 +5,9 @@ import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Phone } from 'lucide-react'
+import { useSiteImages } from '@/hooks/use-site-image'
 
-const categories = [
+const defaultCategories = [
   {
     id: 'wheelchairs',
     name: 'Wheelchairs',
@@ -15,13 +16,15 @@ const categories = [
       {
         name: 'Manual Wheelchair - Standard',
         description: 'Lightweight aluminum frame with adjustable footrests and padded armrests',
-        image: 'https://images.unsplash.com/photo-1583946099379-f9c9cb8bc030?w=600&q=80',
+        imageSlot: 'product_manual_wheelchair',
+        defaultImage: 'https://images.unsplash.com/photo-1583946099379-f9c9cb8bc030?w=600&q=80',
         features: ['Foldable design', 'Weight capacity: 250 lbs', 'Adjustable height'],
       },
       {
         name: 'Transport Wheelchair',
         description: 'Compact and portable for easy transportation and storage',
-        image: 'https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=600&q=80',
+        imageSlot: 'product_transport_wheelchair',
+        defaultImage: 'https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=600&q=80',
         features: ['Ultra-lightweight', 'Easy to fold', 'Comfortable seat'],
       },
     ],
@@ -34,13 +37,15 @@ const categories = [
       {
         name: 'Folding Walker with Wheels',
         description: 'Sturdy walker with smooth-rolling wheels and hand brakes',
-        image: 'https://images.unsplash.com/photo-1610349907345-19bf89ce8e3e?w=600&q=80',
+        imageSlot: 'product_folding_walker',
+        defaultImage: 'https://images.unsplash.com/photo-1610349907345-19bf89ce8e3e?w=600&q=80',
         features: ['Padded seat', 'Storage basket', 'Adjustable height'],
       },
       {
         name: 'Aluminum Walking Cane',
         description: 'Lightweight, adjustable cane with ergonomic grip',
-        image: 'https://images.unsplash.com/photo-1584613132429-a50a3b5c0e86?w=600&q=80',
+        imageSlot: 'product_walking_cane',
+        defaultImage: 'https://images.unsplash.com/photo-1584613132429-a50a3b5c0e86?w=600&q=80',
         features: ['Height adjustable', 'Anti-slip tip', 'Ergonomic handle'],
       },
     ],
@@ -53,13 +58,15 @@ const categories = [
       {
         name: 'Continuous Glucose Monitor (CGM)',
         description: 'Real-time monitoring with smartphone connectivity',
-        image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80',
+        imageSlot: 'product_cgm',
+        defaultImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80',
         features: ['14-day sensor', 'Customizable alerts', 'Data tracking app'],
       },
       {
         name: 'Blood Glucose Meter Kit',
         description: 'Accurate testing with fast results and large display',
-        image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80',
+        imageSlot: 'product_glucose_meter',
+        defaultImage: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80',
         features: ['Large display', 'Memory storage', 'Lancing device included'],
       },
     ],
@@ -72,20 +79,37 @@ const categories = [
       {
         name: 'Knee Support Brace',
         description: 'Adjustable compression brace for pain relief and stability',
-        image: 'https://images.unsplash.com/photo-1620331925087-4a13be250c5d?w=600&q=80',
+        imageSlot: 'product_knee_brace',
+        defaultImage: 'https://images.unsplash.com/photo-1620331925087-4a13be250c5d?w=600&q=80',
         features: ['Dual stabilizers', 'Breathable material', 'Non-slip design'],
       },
       {
         name: 'Lumbar Back Support',
         description: 'Lower back brace for posture correction and pain relief',
-        image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80',
+        imageSlot: 'product_lumbar_support',
+        defaultImage: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80',
         features: ['Adjustable compression', 'Moisture-wicking', 'Fits under clothing'],
       },
     ],
   },
 ]
 
+// Collect all image slots for batch fetching
+const allProductSlots = defaultCategories.flatMap((cat) =>
+  cat.products.map((p) => ({ key: p.imageSlot, defaultUrl: p.defaultImage }))
+)
+
 export default function ProductsPage() {
+  const images = useSiteImages(allProductSlots)
+
+  const categories = defaultCategories.map((cat) => ({
+    ...cat,
+    products: cat.products.map((p) => ({
+      ...p,
+      image: images[p.imageSlot] || p.defaultImage,
+    })),
+  }))
+
   return (
     <div className="pt-24">
       {/* Hero section */}

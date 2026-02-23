@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Button } from './ui/button'
 import { motion } from 'framer-motion'
 import { ArrowRight, Check } from 'lucide-react'
+import { useSiteImage } from '@/hooks/use-site-image'
 
 const features = [
   'Medical-Grade Quality',
@@ -14,6 +15,8 @@ const features = [
 ]
 
 export function Hero() {
+  const heroImage = useSiteImage('hero_main_image', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80')
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-50 via-primary-50/30 to-secondary-50/20">
       {/* Background pattern */}
@@ -134,7 +137,7 @@ export function Hero() {
           >
             <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
+                src={heroImage}
                 alt="Medical professional with patient"
                 fill
                 className="object-cover"
