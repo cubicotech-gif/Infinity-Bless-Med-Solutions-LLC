@@ -23,8 +23,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="relative w-12 h-12">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20">
                 <Image
                   src="/logo.svg"
                   alt="Infinity Bless"
@@ -33,7 +33,7 @@ export function Footer() {
                 />
               </div>
               <div>
-                <div className="font-display font-bold text-xl text-white">
+                <div className="font-display font-bold text-2xl text-white">
                   Infinity Bless
                 </div>
                 <div className="text-sm text-gray-400">Med Solutions</div>

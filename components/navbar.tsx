@@ -51,23 +51,24 @@ export function Navbar() {
       </div>
 
       {/* Main navigation */}
-      <nav className="max-w-7xl mx-auto px-6 py-4">
+      <nav className="max-w-7xl mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 transition-transform group-hover:scale-105">
+          <Link href="/" className="flex items-center gap-4 group">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 transition-transform group-hover:scale-105">
               <Image
                 src="/logo.svg"
                 alt="Infinity Bless Med Solutions"
                 fill
                 className="object-contain"
+                priority
               />
             </div>
             <div className="hidden sm:block">
-              <div className={`font-display font-bold text-xl ${scrolled ? 'text-gray-900' : 'text-gray-900'} transition-colors`}>
+              <div className={`font-display font-bold text-2xl ${scrolled ? 'text-gray-900' : 'text-gray-900'} transition-colors`}>
                 Infinity Bless
               </div>
-              <div className={`text-xs ${scrolled ? 'text-gray-600' : 'text-gray-700'} transition-colors`}>
+              <div className={`text-sm ${scrolled ? 'text-gray-600' : 'text-gray-700'} transition-colors`}>
                 Med Solutions
               </div>
             </div>

@@ -33,7 +33,7 @@ const contactInfo = [
 
 export default function ContactPage() {
   return (
-    <div className="pt-24">
+    <div className="pt-32">
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-6">
